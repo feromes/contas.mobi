@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111201165742) do
+ActiveRecord::Schema.define(:version => 20111201165858) do
+
+  create_table "conta", :force => true do |t|
+    t.string   "nome"
+    t.boolean  "debito"
+    t.text     "descricao"
+    t.text     "detalhes"
+    t.integer  "user_id"
+    t.integer  "parent_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "conta", ["user_id"], :name => "index_conta_on_user_id"
 
   create_table "razao", :force => true do |t|
     t.date     "data_do_lancamento"
