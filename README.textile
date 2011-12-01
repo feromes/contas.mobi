@@ -1,0 +1,50 @@
+h1. Conta.Mobi
+
+Eu até gosto de planilhas, mas sempre penso: "Porque usar planilhas se eu sei Ruby on Rails?"
+
+h2. Problema inicial
+
+Meu grande problema é saber:
+* Quanto eu ganho
+* Quanto eu gasto
+* Quanto eu tenho para receber
+* Quanto eu tenho para pagar
+* Quanto eu já recebi
+* Quanto eu já gastei
+
+Parece simples! Mas é preciso abstrair isso para um modelo genérico onde qualquer pessoa possa controlar suas contas de casa.
+
+h2. Onde estão esses dados?
+
+Normalmente esses dados estão no extrato de banco, fatura do cartão de crédito, comprovantes de despesa, comprovantes de pagamento, canhotos de cheques, etc ...
+
+h2. Modelo de dados inicial
+
+Se eu me lembro das minhas aulas de contabilidade guardamos tudo em *Contas*
+Por exemplo nosso cartão de crédito é uma conta para Contabilidade, e ela tem débitos e créditos, o chamado "método das Partidas Dobradas":http://pt.wikipedia.org/wiki/M%C3%A9todo_das_partidas_dobradas
+Esse modelo tb aparece na conta corrente, no dinheiro que temos na carteira, na dívida que temos com a Sogra e até no nosso talão de cheques.
+                           
+h3. Plano de contas
+
+É importante organizar as contas para depois totaliza-las. Em contabilidade o nome certo disso é "Plano de Contas ou Contas Contábeis":http://pt.wikipedia.org/wiki/Contas_cont%C3%A1beis o que é na verdade, fundamento para o balanço contabil. 
+As contas do plano de contas tem a sua hierarquia. O ActiveRecord nos primórdios tinha o "acts_as_tree":/http://pt.wikipedia.org/wiki/Contas_cont%C3%A1beis que agora é uma gem. 
+Mas existem tb boas opções em "7 Tree Data Structure Plugins for Rails":/http://www.railsinside.com/plugins/164-7-tree-data-structure-plugins-for-rails.html
+
+h2. Criptografia e multi usuário
+
+Eu não me sentiria bem de um provedor de serviço ter acesso aos meus dados bancários, mesmo que ele fique com dó das minhas dívidas e me de algum dinheiro, prefiro meus dados sigilosos. Mesmo porque o sistema terá outros usuários e por isso é interessante manter os dados siglosos.
+Portanto, faz parte do escopo do projeto contas.mobi criptografar dados de valores das contas.
+Penso em usar o "https://github.com/shuber/attr_encrypted":https://github.com/shuber/attr_encrypted ou ainda 
+
+PS.: É necessário um estudo mais aprofundado, pois encriptar números que precisarão passar por totalização não costuma ser uma grande idéia.
+
+h2. Em português
+
+Esse projeto vai usar nomes de métodos e tabelas em Português, pelo simples fato de que não tenho familiaridade com os nomes contábeis em Inglês.
+Para isso: <pre>config.active_record.pluralize_table_names</pre>
+
+h2. Participe!
+
+Vou tentar colocar a primeira versão Beta em pouco tempo no ar! Pull Requests são bem vindos!
+
+
