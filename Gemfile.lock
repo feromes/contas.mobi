@@ -30,6 +30,7 @@ GEM
     activesupport (3.1.3)
       multi_json (~> 1.0)
     arel (2.2.1)
+    bcrypt-ruby (2.1.4)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -47,6 +48,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.1.3)
+    devise (1.2.1)
+      bcrypt-ruby (~> 2.1.2)
+      orm_adapter (~> 0.0.3)
+      warden (~> 1.0.3)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (1.2.9)
@@ -74,6 +79,7 @@ GEM
     mime-types (1.17.2)
     multi_json (1.0.4)
     nokogiri (1.5.0)
+    orm_adapter (0.0.4)
     polyglot (0.3.3)
     rack (1.3.5)
     rack-cache (1.1)
@@ -92,6 +98,10 @@ GEM
       activesupport (= 3.1.3)
       bundler (~> 1.0)
       railties (= 3.1.3)
+    rails-erd (0.4.5)
+      activerecord (~> 3.0)
+      activesupport (~> 3.0)
+      ruby-graphviz (~> 0.9.18)
     railties (3.1.3)
       actionpack (= 3.1.3)
       activesupport (= 3.1.3)
@@ -115,6 +125,7 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.7.0)
+    ruby-graphviz (0.9.21)
     rubyzip (0.9.5)
     sass (3.1.11)
     sass-rails (3.1.5)
@@ -142,6 +153,8 @@ GEM
     uglifier (1.1.0)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    warden (1.0.3)
+      rack (>= 1.0.0)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -151,10 +164,12 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coffee-rails (~> 3.1.1)
+  devise
   factory_girl_rails
   guard-rspec
   jquery-rails
   rails (= 3.1.3)
+  rails-erd
   rspec-rails
   sass-rails (~> 3.1.5)
   shoulda-matchers
