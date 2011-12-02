@@ -11,32 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111201170241) do
+ActiveRecord::Schema.define(:version => 20111202121453) do
 
   create_table "conta", :force => true do |t|
     t.string   "nome"
     t.boolean  "debito"
     t.text     "descricao"
     t.text     "detalhes"
-    t.integer  "user_id"
+    t.integer  "usuario_id"
     t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "conta", ["user_id"], :name => "index_conta_on_user_id"
+  add_index "conta", ["usuario_id"], :name => "index_conta_on_user_id"
 
   create_table "razao", :force => true do |t|
     t.date     "data_do_lancamento"
     t.decimal  "valor"
     t.integer  "conta_id"
-    t.integer  "user_id"
+    t.integer  "usuario_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "razao", ["conta_id"], :name => "index_razao_on_conta_id"
-  add_index "razao", ["user_id"], :name => "index_razao_on_user_id"
+  add_index "razao", ["usuario_id"], :name => "index_razao_on_user_id"
 
   create_table "usuario", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

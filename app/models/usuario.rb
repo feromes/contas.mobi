@@ -6,5 +6,7 @@ class Usuario < ActiveRecord::Base
          :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable #, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me    
+  
+  has_many :contas, :class_name => "conta", :foreign_key => "conta_id"
 end

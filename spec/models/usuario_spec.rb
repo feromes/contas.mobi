@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe Usuario do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many(:contas) }
+  it { should have_many(:razoes).through(:contas)}
 end
