@@ -8,5 +8,5 @@ class Usuario < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me    
   
-  has_many :contas, :class_name => "conta", :foreign_key => "conta_id"
+  has_many :contas, :class_name => "Conta", :foreign_key => "usuario_id"
 end
