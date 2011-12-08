@@ -28,7 +28,28 @@ h3. Plano de contas
 
 É importante organizar as contas para depois totaliza-las. Em contabilidade o nome certo disso é "Plano de Contas ou Contas Contábeis":http://pt.wikipedia.org/wiki/Contas_cont%C3%A1beis o que é na verdade, fundamento para o balanço contabil. 
 As contas do plano de contas tem a sua hierarquia. O ActiveRecord nos primórdios tinha o "acts_as_tree":/http://pt.wikipedia.org/wiki/Contas_cont%C3%A1beis que agora é uma gem. 
-Mas existem tb boas opções em "7 Tree Data Structure Plugins for Rails":/http://www.railsinside.com/plugins/164-7-tree-data-structure-plugins-for-rails.html
+Mas existem tb boas opções em "7 Tree Data Structure Plugins for Rails":/http://www.railsinside.com/plugins/164-7-tree-data-structure-plugins-for-rails.html  
+
+h3. Comportamento das contas
+
+Basicamente existem três tipos de contas, e aqui não vamos falar de contabilidade:
+
+* As coisas, ou contas que pagamos que aqui chamaremos de _Contas de Saida_
+* As contas que recebemos que aqui chamaremos de _Contas de Entrada_
+* As contas que tem entradas e saídas chamadas de _Contas Correntes_
+
+h4. Conta de Saída
+
+bq. Exemplos: Despesas em geral, água, luz, telefone, aluguel
+
+h4. Conta de Entrada  
+
+bq. Exemplos: Recebimentos em Geral, Salário, Mesada, Bonus, etc ...
+
+h4. Conta Corrente
+
+bq. Exemplos: Sua Conta no Banco, A sua fatura de cartão de crédito e até o controle do seu talão de cheques
+
 
 h2. Criptografia e multi usuário
 
