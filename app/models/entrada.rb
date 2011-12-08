@@ -1,0 +1,3 @@
+class Entrada < Conta
+  
+end
