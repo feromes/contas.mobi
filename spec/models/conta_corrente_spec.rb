@@ -13,8 +13,10 @@ describe ContaCorrente do
      end
   end
   context "Dada uma conta corrente criada com saldo inicial de R$ 899,00" do
+     conta_corrente = ContaCorrente.create(saldo_inicial: 899.00, nome: "Mais uma conta de testes", debito: false)
      it "é sacado R$ 399,00" do
-       pending
+       conta_corrente.novo_lancamento(-399.00)
+       conta_corrente.saldo.should eq(500.00)
      end
   end
 end

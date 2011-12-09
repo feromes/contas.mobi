@@ -4,6 +4,11 @@ class Conta < ActiveRecord::Base
   validates_presence_of :nome
   
   def saldo
-    razoes.sum(:valor)
+    razoes.sum(:valor) + saldo_inicial
+  end
+  
+  def novo_lancamento(valor)
+    sinal = debito == true ? -1.0 : 1.0 
+    razoes.create(valor: (valor * sinal))
   end
 end
