@@ -3,7 +3,8 @@ require 'spec_helper'
 
 describe Conta do
   it { should have_many(:razoes) }
-  it { should belong_to(:usuario) }      
+  it { should belong_to(:usuario) }
+  it { should validate_presence_of(:nome)}      
   
   context "Um novo usuário acabou de criar a sua conta" do
     it "algumas opções de planos de contas devem ser sugeridas" do
