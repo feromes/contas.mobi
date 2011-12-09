@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111208162534) do
+ActiveRecord::Schema.define(:version => 20111209171023) do
 
   create_table "conta", :force => true do |t|
     t.string   "nome"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20111208162534) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"
+    t.decimal  "saldo_inicial"
   end
 
   add_index "conta", ["usuario_id"], :name => "index_conta_on_user_id"
