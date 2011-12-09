@@ -36,9 +36,14 @@ end
 
 gem "rspec-rails", :group => [:test, :development]
 group :test do
-  # Pretty printed test output
+  # Pretty printed test output 
   gem "factory_girl_rails"
   gem "capybara"
   gem "guard-rspec"
-  gem "shoulda-matchers"
+  gem "shoulda-matchers"       
+  gem "ZenTest"
+  gem "autotest-rails"  
+  gem "autotest-growl"
+  gem "autotest-fsevent"
+  # gem "redgreen"
 end
