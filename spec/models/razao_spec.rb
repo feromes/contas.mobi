@@ -6,8 +6,10 @@ describe Razao do
   it { should belong_to(:usuario) }
   
   context "Dada uma conta de Saida recem criada, como por exemplo despesas de condominio" do
+    conta_de_condominio = Saida.create(nome: "Condomínio", debito: true)
     it "um novo lancamento é realizado no valor de R$ 200,00" do
-      pending("fazer um lancamento de condominio de R$ 200,00")
+      conta_de_condominio.razoes.create(valor: 200.00) 
+      conta_de_condominio.saldo.should eq(-200.00)
     end
   end
   

@@ -1,3 +1,3 @@
 class ContaCorrente < Conta
-  
+
 end
